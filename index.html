@@ -14,16 +14,19 @@
     --radius:16px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  html,body{overflow-x:hidden}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--maroon)}
+    color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word}
+  img{max-width:100%;height:auto}
+  a{color:var(--maroon);overflow-wrap:break-word}
   h1,h2,h3{line-height:1.2;margin:0 0 .4em}
   h2{font-size:1.5rem;color:var(--choc)}
   h3{font-size:1.12rem;color:var(--choc2)}
   .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
   .chip{display:inline-block;background:var(--cream);border:1px solid var(--line);border-radius:999px;
-    padding:4px 12px;font-size:.82rem;font-weight:600;color:var(--choc2);margin:3px 4px 3px 0;white-space:nowrap}
+    padding:4px 12px;font-size:.82rem;font-weight:600;color:var(--choc2);margin:3px 4px 3px 0}
 
   /* NAV */
   header.top{position:sticky;top:0;z-index:50;background:rgba(58,35,24,.97);backdrop-filter:blur(6px);
@@ -71,9 +74,9 @@
   .callout h3{margin-top:0}
 
   /* timeline */
-  .day{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:16px 0;background:#fff;box-shadow:var(--shadow)}
+  .day{display:grid;grid-template-columns:128px 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:16px 0;background:#fff;box-shadow:var(--shadow)}
   .day .side{background:linear-gradient(160deg,var(--maroon),var(--choc));color:#fff;padding:18px 16px}
-  .day .side .dow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .day .side .dow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
   .day .side .num{font-size:2.2rem;font-weight:800;line-height:1}
   .day .side .mo{font-size:.9rem;opacity:.9}
   .day .body{padding:16px 20px}
@@ -113,12 +116,81 @@
     width:46px;height:46px;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s}
   #toTop.show{opacity:1;pointer-events:auto}
 
+  /* tablet */
   @media(max-width:820px){
+    .g3{grid-template-columns:1fr 1fr}
+    .hero .wrap{grid-template-columns:1fr}
+    .hero img{max-width:220px}
+  }
+
+  /* ============ MOBILE — the primary experience ============ */
+  @media(max-width:680px){
+    .wrap{padding:0 14px}
+    h2{font-size:1.3rem}
+    h3{font-size:1.06rem}
+    section{padding:24px 0}
+    .card{padding:15px 15px;margin:12px 0}
+    .lead{margin-bottom:1em}
+
+    /* everything stacks to one column */
     .hero .wrap,.g2,.g3,.contactgrid{grid-template-columns:1fr}
-    .hero img{max-width:200px}
-    .day{grid-template-columns:92px 1fr}
-    .tl li{grid-template-columns:96px 1fr}
-    nav .navwrap{display:none}
+
+    /* sticky header: brand on top, swipeable section nav below */
+    .top .wrap{min-height:0;padding-top:8px;padding-bottom:0;gap:0;align-items:flex-start}
+    .brand{width:100%;margin:0;padding:4px 0 8px;font-size:.9rem}
+    nav{width:100%}
+    nav .navwrap{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;width:100%;
+      padding:0 0 9px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    nav .navwrap::-webkit-scrollbar{display:none}
+    nav a{flex:0 0 auto;background:rgba(255,255,255,.09);padding:7px 12px;font-size:.82rem}
+
+    /* hero */
+    .hero{padding:26px 0 24px}
+    .hero h1{font-size:1.72rem}
+    .hero .sub{font-size:1rem}
+    .hero img{max-width:180px}
+    .herocard{padding:13px 14px}
+
+    /* countdown stays on one row */
+    .countdown{gap:7px}
+    .cd{min-width:0;padding:8px 2px}
+    .cd b{font-size:1.35rem}
+    .cd span{font-size:.62rem}
+
+    .callout{padding:13px 15px}
+
+    /* timeline: the date rail becomes a full-width header banner */
+    .day{grid-template-columns:1fr}
+    .day .side{display:flex;flex-direction:row;align-items:baseline;gap:10px;padding:11px 15px}
+    .day .side .num{font-size:1.5rem}
+    .day .side .mo{margin-left:auto;opacity:.9}
+    .day .body{padding:14px 15px}
+
+    /* timeline rows: time label stacks above its description */
+    .tl li{grid-template-columns:1fr;gap:1px;padding:10px 0}
+    .tl .t{font-size:.9rem}
+
+    /* -------- responsive tables (no sideways scroll) -------- */
+    /* key/value tables: label above value */
+    table.kv tr{display:block;padding:9px 0;border-bottom:1px solid var(--line)}
+    table.kv tr:last-child{border-bottom:none}
+    table.kv th{display:block;background:none;border:none;padding:0 0 2px;
+      font-size:.7rem;letter-spacing:.05em;color:var(--maroon2)}
+    table.kv td{display:block;border:none;padding:0;font-size:.95rem}
+
+    /* header-row tables: each row becomes a labeled card */
+    table.rt{margin:4px 0}
+    table.rt tr.hr{display:none}
+    table.rt tr{display:block;background:#fff;border:1px solid var(--line);
+      border-radius:12px;padding:10px 14px;margin:0 0 11px;box-shadow:var(--shadow)}
+    table.rt td{display:block;border:none;padding:7px 0;font-size:.94rem}
+    table.rt td+td{border-top:1px dashed var(--line)}
+    table.rt td:before{content:attr(data-label);display:block;margin-bottom:3px;
+      font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;
+      color:var(--maroon2);font-weight:800}
+
+    .btn{padding:9px 14px}
+    #toTop{width:44px;height:44px;right:12px;bottom:12px}
   }
   @media print{
     header.top,#toTop,.btn{display:none!important}
@@ -190,7 +262,7 @@
   <div class="grid g2">
     <div class="card">
       <h3>What &amp; when</h3>
-      <table>
+      <table class="kv">
         <tr><th>Day 1 · Thu Jul 9</th><td><strong>Hersheypark</strong> All-American Mascot Day — parade, group photo, lunch, then rides + water park + Campers-vs-Staff Challenge, then drive to Millersville &amp; dorm check-in.</td></tr>
         <tr><th>Day 2 · Fri Jul 10</th><td><strong>Millersville University</strong> — training at the Student Memorial Center (character, acting, safety, skits).</td></tr>
         <tr><th>Day 3 · Sat Jul 11</th><td><strong>Millersville</strong> — full training day + evening.</td></tr>
@@ -199,7 +271,7 @@
     </div>
     <div class="card">
       <h3>Who's who</h3>
-      <table>
+      <table class="kv">
         <tr><th>Wyatt</th><td>Performer / camper. <strong>Resident</strong> (stays in Millersville dorms Thu–Sat). Shirt size: L. Mascot: navy-blue SMHS tunic.</td></tr>
         <tr><th>Dom</th><td>Escort / handler / chaperone. Off work Thu &amp; Fri. Shirt: XL.</td></tr>
         <tr><th>Run by</th><td><strong>Erin Blank</strong>, Keystone Mascots (owner). ~15 staff, ~50 campers/parents/advisors.</td></tr>
@@ -357,30 +429,30 @@
   <h2>Getting there</h2>
   <p class="lead">Three venues across the four days. Tap any address for live directions.</p>
   <div class="card">
-    <table>
-      <tr><th>Venue</th><th>When</th><th>Address &amp; notes</th></tr>
+    <table class="rt">
+      <tr class="hr"><th>Venue</th><th>When</th><th>Address &amp; notes</th></tr>
       <tr>
-        <td><strong>Hersheypark</strong></td>
-        <td>Thu Jul 9, 8 AM</td>
-        <td>100 Hersheypark Drive, Hershey, PA 17033 · Park GATESIDE lot (Stadium ↔ Arena)<br>
+        <td data-label="Venue"><strong>Hersheypark</strong></td>
+        <td data-label="When">Thu Jul 9, 8 AM</td>
+        <td data-label="Address &amp; notes">100 Hersheypark Drive, Hershey, PA 17033 · Park GATESIDE lot (Stadium ↔ Arena)<br>
           <a class="btn ghost" href="https://maps.apple.com/?daddr=100+Hersheypark+Drive+Hershey+PA+17033" target="_blank" rel="noopener">Directions ↗</a></td>
       </tr>
       <tr>
-        <td><strong>Millersville — South Village Bldg A</strong><br><span class="muted">Dorms + Thursday evening</span></td>
-        <td>Thu eve → Sun AM</td>
-        <td>120 Centennial Drive, Millersville, PA 17551 · <em>New folks get lost in South Village — it's normal, staff will guide you.</em><br>
+        <td data-label="Venue"><strong>Millersville — South Village Bldg A</strong><br><span class="muted">Dorms + Thursday evening</span></td>
+        <td data-label="When">Thu eve → Sun AM</td>
+        <td data-label="Address &amp; notes">120 Centennial Drive, Millersville, PA 17551 · <em>New folks get lost in South Village — it's normal, staff will guide you.</em><br>
           <a class="btn ghost" href="https://maps.apple.com/?daddr=120+Centennial+Drive+Millersville+PA+17551" target="_blank" rel="noopener">Directions ↗</a></td>
       </tr>
       <tr>
-        <td><strong>Millersville — Student Memorial Center (SMC)</strong><br><span class="muted">Training venue</span></td>
-        <td>Fri–Sun</td>
-        <td>21 South George Street, Millersville, PA 17551 · Park on the <strong>SOUTH</strong> side; enter from the <strong>EAST</strong> side; meet in the lobby Friday AM.<br>
+        <td data-label="Venue"><strong>Millersville — Student Memorial Center (SMC)</strong><br><span class="muted">Training venue</span></td>
+        <td data-label="When">Fri–Sun</td>
+        <td data-label="Address &amp; notes">21 South George Street, Millersville, PA 17551 · Park on the <strong>SOUTH</strong> side; enter from the <strong>EAST</strong> side; meet in the lobby Friday AM.<br>
           <a class="btn ghost" href="https://maps.apple.com/?daddr=21+South+George+Street+Millersville+PA+17551" target="_blank" rel="noopener">Directions ↗</a></td>
       </tr>
       <tr>
-        <td><strong>Penn Medicine Park</strong><br><span class="muted">Lancaster Stormers — graduation game</span></td>
-        <td>Sun Jul 12, ~12:30 PM</td>
-        <td>Lancaster, PA · Game 2 PM; duties done ~4 PM.<br>
+        <td data-label="Venue"><strong>Penn Medicine Park</strong><br><span class="muted">Lancaster Stormers — graduation game</span></td>
+        <td data-label="When">Sun Jul 12, ~12:30 PM</td>
+        <td data-label="Address &amp; notes">Lancaster, PA · Game 2 PM; duties done ~4 PM.<br>
           <a class="btn ghost" href="https://maps.apple.com/?daddr=Penn+Medicine+Park+Lancaster+PA" target="_blank" rel="noopener">Directions ↗</a></td>
       </tr>
     </table>
@@ -403,7 +475,7 @@
     <div class="card">
       <h3>St. Philip the Apostle <span class="chip">~5 min from camp</span></h3>
       <p class="muted" style="margin:0 0 8px">2111 Millersville Pike, Lancaster, PA 17603 · the closest parish to Millersville University</p>
-      <table>
+      <table class="kv">
         <tr><th>Saturday vigil</th><td><strong>5:00 PM</strong> — fulfills the obligation</td></tr>
         <tr><th>Sunday</th><td>8:30 AM · 11:00 AM</td></tr>
         <tr><th>Confession</th><td>Sat 8:00–8:50 AM · <strong>Sat 3:30–4:30 PM</strong> · Thu 5:00–5:50 PM</td></tr>
@@ -414,7 +486,7 @@
     <div class="card">
       <h3>Sacred Heart of Jesus <span class="chip">~4 min from ballpark</span></h3>
       <p class="muted" style="margin:0 0 8px">558 W. Walnut Street, Lancaster, PA 17603 · downtown, ~1 mile from Penn Medicine Park</p>
-      <table>
+      <table class="kv">
         <tr><th>Saturday vigil</th><td>5:00 PM</td></tr>
         <tr><th>Sunday</th><td>8:00 AM · <strong>10:30 AM</strong> · 6:00 PM</td></tr>
         <tr><th>Confession</th><td>Sat 3:30–4:30 PM · Thu 5:00–6:00 PM</td></tr>
@@ -426,11 +498,11 @@
 
   <div class="card">
     <h3>Pick the option that fits</h3>
-    <table>
-      <tr><th>Option</th><th>When</th><th>Where</th><th>Travel</th><th>Best for</th></tr>
-      <tr><td><strong>A — Recommended</strong></td><td>Sat <strong>5:00 PM</strong> vigil</td><td>St. Philip (Millersville)</td><td>~5 min from campus</td><td>Frees up all of Sunday</td></tr>
-      <tr><td>B</td><td>Sun <strong>8:30 AM</strong></td><td>St. Philip (Millersville)</td><td>~5 min; then ~13 min to ballpark</td><td>Simplest Sunday; done by ~9:30</td></tr>
-      <tr><td>C</td><td>Sun <strong>10:30 AM</strong></td><td>Sacred Heart (downtown)</td><td>~4 min / 1 mi from ballpark</td><td>Mass right by the game</td></tr>
+    <table class="rt">
+      <tr class="hr"><th>Option</th><th>When</th><th>Where</th><th>Travel</th><th>Best for</th></tr>
+      <tr><td data-label="Option"><strong>A — Recommended</strong></td><td data-label="When">Sat <strong>5:00 PM</strong> vigil</td><td data-label="Where">St. Philip (Millersville)</td><td data-label="Travel">~5 min from campus</td><td data-label="Best for">Frees up all of Sunday</td></tr>
+      <tr><td data-label="Option">B</td><td data-label="When">Sun <strong>8:30 AM</strong></td><td data-label="Where">St. Philip (Millersville)</td><td data-label="Travel">~5 min; then ~13 min to ballpark</td><td data-label="Best for">Simplest Sunday; done by ~9:30</td></tr>
+      <tr><td data-label="Option">C</td><td data-label="When">Sun <strong>10:30 AM</strong></td><td data-label="Where">Sacred Heart (downtown)</td><td data-label="Travel">~4 min / 1 mi from ballpark</td><td data-label="Best for">Mass right by the game</td></tr>
     </table>
     <p class="muted" style="margin-bottom:0">Skip St. Philip's 11:00 AM Sunday Mass — it ends right at noon and cuts the 12:30 ballpark call too close.</p>
   </div>
@@ -520,13 +592,13 @@
   <h2>Meals</h2>
   <p class="lead">A lot is included. Wyatt is a <strong>resident</strong>; if Dom commutes rather than staying in the dorm, use the commuter column.</p>
   <div class="card">
-    <table>
-      <tr><th>Meal</th><th>Resident (Wyatt)</th><th>Commuter (parent/advisor)</th></tr>
-      <tr><td>Thu lunch @ Hersheypark</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
-      <tr><td>Thu dinner @ Millersville</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
-      <tr><td>Fri / Sat / Sun breakfast</td><td class="pill-done">Covered</td><td>A-la-carte (pay on campus)</td></tr>
-      <tr><td>Fri / Sat / Sun lunch</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
-      <tr><td>Fri &amp; Sat dinner @ Millersville</td><td class="pill-done">Covered</td><td>A-la-carte (pay on campus)</td></tr>
+    <table class="rt">
+      <tr class="hr"><th>Meal</th><th>Resident (Wyatt)</th><th>Commuter (parent/advisor)</th></tr>
+      <tr><td data-label="Meal">Thu lunch @ Hersheypark</td><td data-label="Resident (Wyatt)" class="pill-done">Covered</td><td data-label="Commuter" class="pill-done">Covered</td></tr>
+      <tr><td data-label="Meal">Thu dinner @ Millersville</td><td data-label="Resident (Wyatt)" class="pill-done">Covered</td><td data-label="Commuter" class="pill-done">Covered</td></tr>
+      <tr><td data-label="Meal">Fri / Sat / Sun breakfast</td><td data-label="Resident (Wyatt)" class="pill-done">Covered</td><td data-label="Commuter">A-la-carte (pay on campus)</td></tr>
+      <tr><td data-label="Meal">Fri / Sat / Sun lunch</td><td data-label="Resident (Wyatt)" class="pill-done">Covered</td><td data-label="Commuter" class="pill-done">Covered</td></tr>
+      <tr><td data-label="Meal">Fri &amp; Sat dinner @ Millersville</td><td data-label="Resident (Wyatt)" class="pill-done">Covered</td><td data-label="Commuter">A-la-carte (pay on campus)</td></tr>
     </table>
     <p class="muted" style="margin-bottom:0">Commuting parents/advisors park in the lot south of the SMC. Lunch orders for the Hershey day are already submitted — see <a href="#documents">Documents</a>.</p>
   </div>
@@ -579,12 +651,12 @@
   <div class="grid g2">
     <div class="card">
       <h3>Day-of documents</h3>
-      <table>
-        <tr><th>Doc</th><th>Where / action</th></tr>
-        <tr><td><strong>Hersheypark parking pass</strong></td><td>In Erin's <em>"Hersheypark Day DETAILS"</em> email (Jul 3). <strong>Keep it on your phone / print it.</strong> <a href="https://mail.google.com/mail/u/0/#inbox/19f260b1421dd629" target="_blank" rel="noopener">Open email ↗</a></td></tr>
-        <tr><td><strong>Parking map</strong> <span class="pill-done">✓ bundled</span></td><td>Shows GATESIDE (Lot N) by the Arena. <a href="assets/documents/Parking-Map.pdf" target="_blank" rel="noopener">Open PDF ↗</a> · also shown in <a href="#hershey">the Hershey playbook</a>.</td></tr>
-        <tr><td>Lunch order — Wyatt</td><td><a href="assets/documents/Lunch-Order-Wyatt.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
-        <tr><td>Lunch order — Dom</td><td><a href="assets/documents/Lunch-Order-Dom.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
+      <table class="rt">
+        <tr class="hr"><th>Doc</th><th>Where / action</th></tr>
+        <tr><td data-label="Doc"><strong>Hersheypark parking pass</strong></td><td data-label="Where / action">In Erin's <em>"Hersheypark Day DETAILS"</em> email (Jul 3). <strong>Keep it on your phone / print it.</strong> <a href="https://mail.google.com/mail/u/0/#inbox/19f260b1421dd629" target="_blank" rel="noopener">Open email ↗</a></td></tr>
+        <tr><td data-label="Doc"><strong>Parking map</strong> <span class="pill-done">✓ bundled</span></td><td data-label="Where / action">Shows GATESIDE (Lot N) by the Arena. <a href="assets/documents/Parking-Map.pdf" target="_blank" rel="noopener">Open PDF ↗</a> · also shown in <a href="#hershey">the Hershey playbook</a>.</td></tr>
+        <tr><td data-label="Doc">Lunch order — Wyatt</td><td data-label="Where / action"><a href="assets/documents/Lunch-Order-Wyatt.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
+        <tr><td data-label="Doc">Lunch order — Dom</td><td data-label="Where / action"><a href="assets/documents/Lunch-Order-Dom.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
       </table>
       <p class="muted" style="margin-bottom:0">The parking map is bundled. To add the <strong>parking pass</strong> too, drop its PDF into <code>assets/documents/</code> and link it here — but keep the repo <strong>private</strong> if you do (a pass can carry a name/barcode).</p>
     </div>
