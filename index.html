@@ -37,6 +37,12 @@
   nav a{color:#f4e9da;text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 9px;border-radius:8px;white-space:nowrap}
   nav a:hover{background:rgba(255,255,255,.12);color:#fff}
   .navwrap{display:flex;gap:2px;flex-wrap:wrap}
+  .navtoggle{display:none;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#f4e9da;
+    border:1px solid rgba(255,255,255,.28);border-radius:9px;padding:7px 14px;font-weight:700;
+    font-size:.88rem;cursor:pointer;line-height:1}
+  .navtoggle:hover{background:rgba(255,255,255,.16);color:#fff}
+  .navtoggle .bars{font-size:1.05rem;transition:transform .2s}
+  .top.open .navtoggle .bars{transform:rotate(90deg)}
 
   /* HERO */
   .hero{background:
@@ -135,14 +141,15 @@
     /* everything stacks to one column */
     .hero .wrap,.g2,.g3,.contactgrid{grid-template-columns:1fr}
 
-    /* sticky header: brand on top, swipeable section nav below */
-    .top .wrap{min-height:0;padding-top:8px;padding-bottom:0;gap:0;align-items:flex-start}
-    .brand{width:100%;margin:0;padding:4px 0 8px;font-size:.9rem}
-    nav{width:100%}
-    nav .navwrap{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;width:100%;
-      padding:0 0 9px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-    nav .navwrap::-webkit-scrollbar{display:none}
-    nav a{flex:0 0 auto;background:rgba(255,255,255,.09);padding:7px 12px;font-size:.82rem}
+    /* sticky header: brand + tap-to-open menu that shows every link */
+    .top .wrap{min-height:0;padding:9px 0;gap:8px;align-items:center;flex-wrap:wrap}
+    .brand{margin-right:auto;padding:0;font-size:.92rem}
+    .navtoggle{display:inline-flex}
+    nav{width:100%;order:3}
+    nav .navwrap{display:none;flex-wrap:wrap;gap:7px;width:100%;padding:2px 0 7px}
+    .top.open nav .navwrap{display:flex}
+    nav a{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);
+      padding:9px 13px;font-size:.88rem}
 
     /* hero */
     .hero{padding:26px 0 24px}
@@ -205,7 +212,8 @@
 <header class="top">
   <div class="wrap">
     <div class="brand"><span class="dot"></span> Mascot Camp 2026 · Dom &amp; Wyatt</div>
-    <nav><div class="navwrap">
+    <button class="navtoggle" aria-label="Show menu" aria-expanded="false" aria-controls="sitenav"><span class="bars">☰</span> Menu</button>
+    <nav id="sitenav"><div class="navwrap">
       <a href="#overview">Overview</a>
       <a href="#itinerary">Itinerary</a>
       <a href="#hershey">Hershey Day</a>
@@ -755,6 +763,22 @@
     if(window.scrollY > 500){ btn.classList.add("show"); } else { btn.classList.remove("show"); }
   });
   btn.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+
+  // Mobile menu: tap to reveal all section links; close after choosing one
+  var hdr = document.querySelector("header.top"),
+      toggle = document.querySelector(".navtoggle");
+  if(toggle && hdr){
+    toggle.addEventListener("click", function(){
+      var open = hdr.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    hdr.querySelectorAll("nav .navwrap a").forEach(function(a){
+      a.addEventListener("click", function(){
+        hdr.classList.remove("open");
+        toggle.setAttribute("aria-expanded","false");
+      });
+    });
+  }
 </script>
 </body>
 </html>
