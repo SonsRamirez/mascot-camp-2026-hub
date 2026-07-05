@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mascot Camp 2026 — Dom &amp; Wyatt · Command Center</title>
+<meta name="description" content="Everything Dom and Wyatt need to get to and through Keystone Mascots Camp 2026 — Hersheypark All-American Mascot Day + Millersville University, July 9–12, 2026." />
+<style>
+  :root{
+    --choc:#3a2318; --choc2:#5a3a25; --maroon:#6c000b; --maroon2:#8c1520;
+    --gold:#e9b949; --cream:#fbf6ee; --card:#ffffff; --ink:#2b2119; --muted:#7a6a5c;
+    --line:#ece1d3; --good:#2e7d4f; --good-bg:#e7f4ec; --warn:#b5561d; --warn-bg:#fdeee1;
+    --shadow:0 2px 4px rgba(58,35,24,.06),0 8px 24px rgba(58,35,24,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--maroon)}
+  h1,h2,h3{line-height:1.2;margin:0 0 .4em}
+  h2{font-size:1.5rem;color:var(--choc)}
+  h3{font-size:1.12rem;color:var(--choc2)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .chip{display:inline-block;background:var(--cream);border:1px solid var(--line);border-radius:999px;
+    padding:4px 12px;font-size:.82rem;font-weight:600;color:var(--choc2);margin:3px 4px 3px 0;white-space:nowrap}
+
+  /* NAV */
+  header.top{position:sticky;top:0;z-index:50;background:rgba(58,35,24,.97);backdrop-filter:blur(6px);
+    border-bottom:3px solid var(--gold)}
+  .top .wrap{display:flex;align-items:center;gap:14px;min-height:56px;flex-wrap:wrap}
+  .brand{color:#fff;font-weight:800;letter-spacing:.3px;font-size:1rem;margin-right:auto;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(233,185,73,.25)}
+  nav a{color:#f4e9da;text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 9px;border-radius:8px;white-space:nowrap}
+  nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+  .navwrap{display:flex;gap:2px;flex-wrap:wrap}
+
+  /* HERO */
+  .hero{background:
+      radial-gradient(1200px 400px at 80% -10%,rgba(233,185,73,.18),transparent 60%),
+      linear-gradient(135deg,var(--maroon),var(--choc) 90%);color:#fff;padding:34px 0 30px}
+  .hero .wrap{display:grid;grid-template-columns:1.4fr .9fr;gap:24px;align-items:center}
+  .hero h1{font-size:2.3rem;margin-bottom:.2em}
+  .hero .sub{font-size:1.06rem;color:#f3e7d6;opacity:.95;margin-bottom:14px}
+  .hero .facts .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:#fff}
+  .hero img{width:100%;max-width:280px;display:block;margin:0 auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+  .herocard{background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:14px 16px}
+
+  /* COUNTDOWN */
+  .countdown{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+  .cd{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;
+    padding:8px 4px;text-align:center;min-width:66px;flex:1}
+  .cd b{display:block;font-size:1.5rem;line-height:1;color:#fff}
+  .cd span{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#e9d9c3}
+
+  /* SECTIONS */
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .lead{color:var(--muted);max-width:70ch;margin:.2em 0 1.2em}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;box-shadow:var(--shadow);margin:14px 0}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .kicker{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--maroon2)}
+
+  /* callout */
+  .callout{border-left:5px solid var(--gold);background:#fff9ec;border-radius:12px;padding:14px 18px;margin:12px 0}
+  .callout.warn{border-color:var(--warn);background:var(--warn-bg)}
+  .callout.good{border-color:var(--good);background:var(--good-bg)}
+  .callout h3{margin-top:0}
+
+  /* timeline */
+  .day{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:16px 0;background:#fff;box-shadow:var(--shadow)}
+  .day .side{background:linear-gradient(160deg,var(--maroon),var(--choc));color:#fff;padding:18px 16px}
+  .day .side .dow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .day .side .num{font-size:2.2rem;font-weight:800;line-height:1}
+  .day .side .mo{font-size:.9rem;opacity:.9}
+  .day .body{padding:16px 20px}
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:8px 0;border-top:1px dashed var(--line)}
+  .tl li:first-child{border-top:none}
+  .tl .t{font-weight:700;color:var(--maroon2);font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:2px 8px;border-radius:999px;background:var(--cream);border:1px solid var(--line);color:var(--choc2);margin-left:6px}
+
+  table{width:100%;border-collapse:collapse;margin:6px 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.94rem}
+  th{background:var(--cream);color:var(--choc);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+
+  ul.check{list-style:none;padding:0;margin:0}
+  ul.check li{padding:5px 0 5px 28px;position:relative}
+  ul.check li:before{content:"";position:absolute;left:2px;top:11px;width:14px;height:8px;
+    border-left:2.5px solid var(--good);border-bottom:2.5px solid var(--good);transform:rotate(-45deg)}
+  ul.box{list-style:none;padding:0;margin:0}
+  ul.box li{padding:5px 0 5px 26px;position:relative}
+  ul.box li:before{content:"";position:absolute;left:2px;top:9px;width:13px;height:13px;border:2px solid var(--choc2);border-radius:3px}
+
+  .contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .contact{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+  .contact .role{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--maroon2);font-weight:800}
+  .contact .name{font-weight:800;font-size:1.05rem}
+  .btn{display:inline-block;background:var(--maroon);color:#fff;text-decoration:none;padding:8px 14px;border-radius:10px;
+    font-weight:700;font-size:.86rem;margin:4px 6px 0 0}
+  .btn.ghost{background:#fff;color:var(--maroon);border:1.5px solid var(--maroon)}
+  .btn.gold{background:var(--gold);color:#3a2318}
+
+  .muted{color:var(--muted);font-size:.9rem}
+  .pill-done{color:var(--good);font-weight:700}
+  footer{background:var(--choc);color:#e9d9c3;padding:26px 0;margin-top:10px;font-size:.9rem}
+  footer a{color:var(--gold)}
+  #toTop{position:fixed;right:16px;bottom:16px;background:var(--maroon);color:#fff;border:none;border-radius:50%;
+    width:46px;height:46px;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s}
+  #toTop.show{opacity:1;pointer-events:auto}
+
+  @media(max-width:820px){
+    .hero .wrap,.g2,.g3,.contactgrid{grid-template-columns:1fr}
+    .hero img{max-width:200px}
+    .day{grid-template-columns:92px 1fr}
+    .tl li{grid-template-columns:96px 1fr}
+    nav .navwrap{display:none}
+  }
+  @media print{
+    header.top,#toTop,.btn{display:none!important}
+    body{background:#fff}
+    .card,.day{box-shadow:none;break-inside:avoid}
+    section{border-top:1px solid #ccc}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> Mascot Camp 2026 · Dom &amp; Wyatt</div>
+    <nav><div class="navwrap">
+      <a href="#overview">Overview</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#hershey">Hershey Day</a>
+      <a href="#locations">Getting There</a>
+      <a href="#mass">Mass</a>
+      <a href="#packing">Packing</a>
+      <a href="#meals">Meals</a>
+      <a href="#contacts">Contacts</a>
+      <a href="#documents">Docs</a>
+      <a href="#status">Status</a>
+    </div></nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker" style="color:var(--gold)">The All-American Mascot Day &amp; 4-Day Camp</div>
+      <h1>Getting Dom &amp; Wyatt to &amp; through Mascot Camp</h1>
+      <div class="sub">Keystone Mascots Summer Camp — <strong>Thursday July 9 → Sunday July 12, 2026</strong><br>
+        Hersheypark (Day 1) + Millersville University, PA</div>
+      <div class="facts">
+        <span class="chip">🎭 Wyatt — performer/camper (resident)</span>
+        <span class="chip">🧑‍🤝‍🧑 Dom — handler / escort</span>
+        <span class="chip">🏨 Millersville dorms · 3 nights</span>
+        <span class="chip">🎢 ~125 mascots at Hershey</span>
+      </div>
+      <div class="herocard" style="margin-top:14px">
+        <div class="kicker" style="color:var(--gold)">Countdown to Hersheypark check-in</div>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="cd"><b id="cd-d">–</b><span>days</span></div>
+          <div class="cd"><b id="cd-h">–</b><span>hrs</span></div>
+          <div class="cd"><b id="cd-m">–</b><span>min</span></div>
+          <div class="cd"><b id="cd-s">–</b><span>sec</span></div>
+        </div>
+        <div class="muted" style="color:#e9d9c3;margin-top:8px">Thursday, July 9 · 8:00 AM · Hersheypark GATESIDE lot</div>
+      </div>
+    </div>
+    <div>
+      <img src="assets/img/wyatt-mascot.png" alt="Wyatt's mascot character" />
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="kicker">Start here</div>
+  <h2>The 60-second briefing</h2>
+  <p class="lead">Four days, three venues, one costume, and a lot of Chocolatetown fun. Wyatt performs; Dom handles. Here is the whole thing at a glance — the deep detail is in the sections below.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>What &amp; when</h3>
+      <table>
+        <tr><th>Day 1 · Thu Jul 9</th><td><strong>Hersheypark</strong> All-American Mascot Day — parade, group photo, lunch, then rides + water park + Campers-vs-Staff Challenge, then drive to Millersville &amp; dorm check-in.</td></tr>
+        <tr><th>Day 2 · Fri Jul 10</th><td><strong>Millersville University</strong> — training at the Student Memorial Center (character, acting, safety, skits).</td></tr>
+        <tr><th>Day 3 · Sat Jul 11</th><td><strong>Millersville</strong> — full training day + evening.</td></tr>
+        <tr><th>Day 4 · Sun Jul 12</th><td>Check out; <strong>graduation performance at the Lancaster Stormers game</strong> (Penn Medicine Park), then drive home.</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Who's who</h3>
+      <table>
+        <tr><th>Wyatt</th><td>Performer / camper. <strong>Resident</strong> (stays in Millersville dorms Thu–Sat). Shirt size: L. Mascot: navy-blue SMHS tunic.</td></tr>
+        <tr><th>Dom</th><td>Escort / handler / chaperone. Off work Thu &amp; Fri. Shirt: XL.</td></tr>
+        <tr><th>Run by</th><td><strong>Erin Blank</strong>, Keystone Mascots (owner). ~15 staff, ~50 campers/parents/advisors.</td></tr>
+        <tr><th>Cost</th><td>~$1,000 paid (registration + resident camp). Most meals covered — see <a href="#meals">Meals</a>.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>🎯 The five things that matter most</h3>
+    <ul class="box" style="margin-top:6px">
+      <li><strong>Be at Hersheypark by 8:00 AM Thursday</strong> — check-in is 8–9 AM. Park in the <strong>GATESIDE lot</strong> between Hersheypark Stadium &amp; Arena, using the emailed parking pass.</li>
+      <li><strong>Wear performing undergarments under your clothes</strong> at check-in (Wyatt suits up in the Arena — no separate changing needed). Private changing space is available if requested to Brewer in advance.</li>
+      <li><strong>Bring the mascot costume + a way to carry it.</strong> Golf carts help haul suits from the lot to the Arena's back entrance.</li>
+      <li><strong>Have the parking pass on your phone</strong> (or printed). It's in Erin's July 3 "Hersheypark Day DETAILS" email — see <a href="#documents">Documents</a>.</li>
+      <li><strong>Residents bring your own linens/bedding + toiletries</strong> for the Millersville dorm. See <a href="#packing">Packing</a>.</li>
+    </ul>
+  </div>
+
+  <div class="callout warn">
+    <h3>⏰ Plan the Thursday drive around an 8 AM check-in</h3>
+    <p style="margin:0">Hershey is roughly a <strong>2½–3 hour drive</strong> from the Fredericksburg area, and check-in opens at <strong>8:00 AM</strong>. That means leaving home around <strong>4:45–5:15 AM</strong> — or driving up <strong>Wednesday night</strong> and staying near Hershey so the morning isn't brutal. Worth deciding this week. (Check-in window is 8–10 AM, but the schedule runs tight from 9 AM suit-up.)</p>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="kicker">The plan, day by day</div>
+  <h2>Full itinerary</h2>
+  <p class="lead">Times for Thursday come straight from Hersheypark's official run-of-show. Friday–Sunday follow the camp's usual rhythm (roughly 9 AM–4 PM training days) — treat those start times as approximate until Erin confirms on-site.</p>
+
+  <!-- THURSDAY -->
+  <div class="day">
+    <div class="side"><div class="dow">Thursday</div><div class="num">9</div><div class="mo">July 2026</div></div>
+    <div class="body">
+      <h3>Hersheypark — All-American Mascot Day <span class="tag">costume</span> <span class="tag">rides</span></h3>
+      <ul class="tl">
+        <li><span class="t">~5:00 AM</span><span><em>Depart home</em> (≈2½–3 hr drive) — or leave from a Hershey-area hotel if you go up Wednesday night.</span></li>
+        <li><span class="t">8:00–9:00</span><span><strong>CHECK-IN.</strong> Enter via the main parking lot with the emailed pass; park in the <strong>GATESIDE lot</strong> (between Hersheypark Stadium &amp; Arena). Carry the suit around the <strong>left side of the Arena to the back</strong> — golf carts available to help.</span></li>
+        <li><span class="t">9:00–10:00</span><span>All mascots <strong>suit up</strong> inside Hersheypark Arena (closed to the public).</span></li>
+        <li><span class="t">10:00–10:30</span><span>Mascots <strong>staged for the parade</strong>.</span></li>
+        <li><span class="t">10:30–11:00</span><span><strong>Parade</strong> marches up to the carousel.</span></li>
+        <li><span class="t">11:00–11:30</span><span>Dancing at the carousel + the <strong>BIG group photo</strong> 📸 (100+ mascots).</span></li>
+        <li><span class="t">11:30</span><span><strong>Lunch</strong> provided in the Arena (order already submitted).</span></li>
+        <li><span class="t">Afternoon</span><span>Costume off &amp; into the car; re-enter the park from the <strong>main gate with wristband</strong>. Enjoy <strong>rides + the water park</strong>, then the <strong>22nd Annual Campers-vs-Staff Challenge</strong>. <em>Mascot campers skip meet-and-greets — go ride!</em></span></li>
+        <li><span class="t">Evening</span><span>Drive ~45 min to <strong>Millersville</strong>: dinner, <strong>dorm check-in</strong> (South Village Bldg A), Day-2 overview, and a lounge night (games, hanging out).</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="day">
+    <div class="side"><div class="dow">Friday</div><div class="num">10</div><div class="mo">July 2026</div></div>
+    <div class="body">
+      <h3>Millersville University — training begins <span class="tag">training</span></h3>
+      <ul class="tl">
+        <li><span class="t">Morning</span><span>Meet in the <strong>Student Memorial Center (SMC) lobby</strong>. Park on the <strong>south lot</strong>; bring costumes to the <strong>east side</strong> of the building to enter.</span></li>
+        <li><span class="t">~9 AM–4 PM</span><span>Training sessions: character development, acting skills, safety &amp; costume care, PIAA/NCAA rules, crowd interaction, and game/pep-rally skits. One-on-one counseling + video footage of each performer.</span></li>
+        <li><span class="t">Meals</span><span>Breakfast, lunch &amp; dinner on campus (covered for residents).</span></li>
+        <li><span class="t">Evening</span><span>Group activities / lounge night.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SATURDAY -->
+  <div class="day">
+    <div class="side"><div class="dow">Saturday</div><div class="num">11</div><div class="mo">July 2026</div></div>
+    <div class="body">
+      <h3>Millersville University — full training day <span class="tag">training</span></h3>
+      <ul class="tl">
+        <li><span class="t">~9 AM–4 PM</span><span>More training + skit building and performance practice at the SMC.</span></li>
+        <li><span class="t">Meals</span><span>Breakfast, lunch &amp; dinner on campus (covered for residents).</span></li>
+        <li><span class="t">Evening</span><span>Prep for Sunday's graduation performance; lounge night.</span></li>
+        <li><span class="t">✝ Mass</span><span><strong>Sunday obligation</strong> — simplest to fulfill tonight: the <a href="#mass">5:00 PM vigil at St. Philip</a> (~5 min away), with confession right before at 3:30–4:30. <a href="#mass">All options below ↓</a></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SUNDAY -->
+  <div class="day">
+    <div class="side"><div class="dow">Sunday</div><div class="num">12</div><div class="mo">July 2026</div></div>
+    <div class="body">
+      <h3>Graduation game + head home <span class="tag">perform</span> <span class="tag">travel</span></h3>
+      <ul class="tl">
+        <li><span class="t">Morning</span><span>Breakfast on campus; <strong>check out of the dorm</strong> (pack the car — you won't come back).</span></li>
+        <li><span class="t">✝ Mass?</span><span>If not done Saturday: <a href="#mass">Sunday morning Mass</a> before the game — St. Philip 8:30 AM, or Sacred Heart 10:30 AM (near the ballpark).</span></li>
+        <li><span class="t">~12:30 PM</span><span>Arrive at <strong>Penn Medicine Park</strong> (Lancaster Stormers) for the graduation performance.</span></li>
+        <li><span class="t">2:00 PM</span><span><strong>Game starts.</strong> Performing duties usually wrap up by ~4:00 PM.</span></li>
+        <li><span class="t">After</span><span>Optional post-game dinner with the group — or leave early / skip the game if travel needs it (totally fine). Then the ~3 hr drive home. 🏠</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HERSHEY DEEP DIVE -->
+<section id="hershey">
+  <div class="kicker">Day 1, in detail</div>
+  <h2>The Hersheypark playbook</h2>
+  <p class="lead">This is the big, one-of-a-kind event — Hersheypark hosting 100+ mascots for a parade and group photo. Everything below is from Hersheypark's official details.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Arrival &amp; parking</h3>
+      <ul class="box">
+        <li>Follow the blue arrows in from <strong>Hersheypark Drive</strong>; stop at the <strong>Parking Toll Plaza</strong> to scan your pre-purchased parking pass.</li>
+        <li>Park in <strong>GATESIDE — Lot N</strong>: the dedicated pre-paid lot right beside <strong>Hersheypark Arena</strong>, between the Arena and Hersheypark Stadium (lower-right on the map below).</li>
+        <li>Bring the suit around the <strong>left side of the Arena, to the back</strong> — that's where you suit up (marked "Changing Rooms").</li>
+        <li><strong>Golf carts</strong> are available to help carry costumes down.</li>
+        <li>Address: <strong>100 Hersheypark Drive, Hershey, PA 17033</strong>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Suiting up &amp; performing</h3>
+      <ul class="box">
+        <li>Come <strong>dressed in the clothes you wear under the suit</strong> — costumes go on inside the Arena (closed to the public).</li>
+        <li><strong>Wear performing undergarments under your clothes</strong> at check-in to save time.</li>
+        <li>Performers are in costume ~10–11 AM (parade + photo). A <strong>rest period</strong> follows before any later meet-and-greet window.</li>
+        <li>Need a private space to change? <strong>Tell Brewer in advance.</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>After the performance</h3>
+      <ul class="box">
+        <li>Put the costume back in the car, then <strong>re-enter the park from the main gate with your wristband</strong>.</li>
+        <li><strong>Mascot campers do NOT do meet-and-greets</strong> — the afternoon is for rides + the water park.</li>
+        <li>Meet-and-greets (adults 18+ only) run until <strong>5 PM latest</strong>.</li>
+        <li>Then: the Campers-vs-Staff Challenge, and off to Millersville.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Beat the heat 🥵</h3>
+      <ul class="box">
+        <li>Camp emphasizes <strong>healthy performing</strong> — Wyatt can sit out any time he needs to.</li>
+        <li>Bring <strong>cooling gear</strong>: cooling towel, personal fan, ice packs, sweatband.</li>
+        <li>Hydrate hard; refillable water bottle is a must.</li>
+        <li>Even at Sunday's game there are lower-strenuous options if it's hot.</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure class="card" style="margin:16px 0 0">
+    <h3 style="margin-top:0">🗺️ Parking map — head for GATESIDE (Lot N)</h3>
+    <a href="assets/documents/Parking-Map.pdf" target="_blank" rel="noopener">
+      <img src="assets/img/parking-map.png" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block"
+        alt="Hersheypark Entertainment Complex parking map. GATESIDE is Lot N — the dark-navy lot at lower right, beside Hersheypark Arena and Hersheypark Stadium." />
+    </a>
+    <figcaption class="muted" style="margin-top:10px">
+      Your lot is <strong>GATESIDE — Lot N</strong> (dark navy, lower-right), right next to <strong>Hersheypark Arena</strong> where you suit up (the map marks the Arena "Changing Rooms"). Follow the blue arrows in from Hersheypark Drive and <strong>stop at the Parking Toll Plaza to scan your parking pass</strong>. <a href="assets/documents/Parking-Map.pdf" target="_blank" rel="noopener">Open the full PDF ↗</a>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="kicker">Addresses &amp; driving</div>
+  <h2>Getting there</h2>
+  <p class="lead">Three venues across the four days. Tap any address for live directions.</p>
+  <div class="card">
+    <table>
+      <tr><th>Venue</th><th>When</th><th>Address &amp; notes</th></tr>
+      <tr>
+        <td><strong>Hersheypark</strong></td>
+        <td>Thu Jul 9, 8 AM</td>
+        <td>100 Hersheypark Drive, Hershey, PA 17033 · Park GATESIDE lot (Stadium ↔ Arena)<br>
+          <a class="btn ghost" href="https://maps.apple.com/?daddr=100+Hersheypark+Drive+Hershey+PA+17033" target="_blank" rel="noopener">Directions ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>Millersville — South Village Bldg A</strong><br><span class="muted">Dorms + Thursday evening</span></td>
+        <td>Thu eve → Sun AM</td>
+        <td>120 Centennial Drive, Millersville, PA 17551 · <em>New folks get lost in South Village — it's normal, staff will guide you.</em><br>
+          <a class="btn ghost" href="https://maps.apple.com/?daddr=120+Centennial+Drive+Millersville+PA+17551" target="_blank" rel="noopener">Directions ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>Millersville — Student Memorial Center (SMC)</strong><br><span class="muted">Training venue</span></td>
+        <td>Fri–Sun</td>
+        <td>21 South George Street, Millersville, PA 17551 · Park on the <strong>SOUTH</strong> side; enter from the <strong>EAST</strong> side; meet in the lobby Friday AM.<br>
+          <a class="btn ghost" href="https://maps.apple.com/?daddr=21+South+George+Street+Millersville+PA+17551" target="_blank" rel="noopener">Directions ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>Penn Medicine Park</strong><br><span class="muted">Lancaster Stormers — graduation game</span></td>
+        <td>Sun Jul 12, ~12:30 PM</td>
+        <td>Lancaster, PA · Game 2 PM; duties done ~4 PM.<br>
+          <a class="btn ghost" href="https://maps.apple.com/?daddr=Penn+Medicine+Park+Lancaster+PA" target="_blank" rel="noopener">Directions ↗</a></td>
+      </tr>
+    </table>
+    <p class="muted" style="margin-bottom:0">Rough distances: home → Hershey ≈ 2½–3 hrs · Hershey → Millersville ≈ 45 min · Millersville → home ≈ 3 hrs. Confirm live times before each leg.</p>
+  </div>
+</section>
+
+<!-- MASS -->
+<section id="mass">
+  <div class="kicker">Sunday obligation</div>
+  <h2>Mass &amp; confession</h2>
+  <p class="lead">We're required to attend Mass this weekend, so here are the vetted, flexible options — a Saturday vigil plus two Sunday Masses, with confession windows. Times were verified from each parish's own site (updated July 2026). Confirm Saturday's exact camp end-time with Erin, then use whichever fits — it's all here so nothing needs rebuilding.</p>
+
+  <div class="callout good">
+    <h3>✅ Recommended: knock it out Saturday</h3>
+    <p style="margin:0"><strong>Confession 3:30–4:30 PM, then the 5:00 PM vigil — both at St. Philip, ~5 minutes from camp.</strong> Dom slips out around 3:30 for confession while Wyatt finishes the day; you both attend the 5:00 PM vigil together. Obligation and confession done, and Sunday stays completely free for checkout and the game.</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>St. Philip the Apostle <span class="chip">~5 min from camp</span></h3>
+      <p class="muted" style="margin:0 0 8px">2111 Millersville Pike, Lancaster, PA 17603 · the closest parish to Millersville University</p>
+      <table>
+        <tr><th>Saturday vigil</th><td><strong>5:00 PM</strong> — fulfills the obligation</td></tr>
+        <tr><th>Sunday</th><td>8:30 AM · 11:00 AM</td></tr>
+        <tr><th>Confession</th><td>Sat 8:00–8:50 AM · <strong>Sat 3:30–4:30 PM</strong> · Thu 5:00–5:50 PM</td></tr>
+      </table>
+      <a class="btn ghost" href="https://maps.apple.com/?daddr=2111+Millersville+Pike+Lancaster+PA+17603" target="_blank" rel="noopener">Directions ↗</a>
+      <a class="btn ghost" href="tel:7178722166">Call</a>
+    </div>
+    <div class="card">
+      <h3>Sacred Heart of Jesus <span class="chip">~4 min from ballpark</span></h3>
+      <p class="muted" style="margin:0 0 8px">558 W. Walnut Street, Lancaster, PA 17603 · downtown, ~1 mile from Penn Medicine Park</p>
+      <table>
+        <tr><th>Saturday vigil</th><td>5:00 PM</td></tr>
+        <tr><th>Sunday</th><td>8:00 AM · <strong>10:30 AM</strong> · 6:00 PM</td></tr>
+        <tr><th>Confession</th><td>Sat 3:30–4:30 PM · Thu 5:00–6:00 PM</td></tr>
+      </table>
+      <a class="btn ghost" href="https://maps.apple.com/?daddr=558+W+Walnut+Street+Lancaster+PA+17603" target="_blank" rel="noopener">Directions ↗</a>
+      <a class="btn ghost" href="tel:7173940757">Call</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Pick the option that fits</h3>
+    <table>
+      <tr><th>Option</th><th>When</th><th>Where</th><th>Travel</th><th>Best for</th></tr>
+      <tr><td><strong>A — Recommended</strong></td><td>Sat <strong>5:00 PM</strong> vigil</td><td>St. Philip (Millersville)</td><td>~5 min from campus</td><td>Frees up all of Sunday</td></tr>
+      <tr><td>B</td><td>Sun <strong>8:30 AM</strong></td><td>St. Philip (Millersville)</td><td>~5 min; then ~13 min to ballpark</td><td>Simplest Sunday; done by ~9:30</td></tr>
+      <tr><td>C</td><td>Sun <strong>10:30 AM</strong></td><td>Sacred Heart (downtown)</td><td>~4 min / 1 mi from ballpark</td><td>Mass right by the game</td></tr>
+    </table>
+    <p class="muted" style="margin-bottom:0">Skip St. Philip's 11:00 AM Sunday Mass — it ends right at noon and cuts the 12:30 ballpark call too close.</p>
+  </div>
+
+  <div class="callout">
+    <h3>⛪ Confession — your window is Saturday afternoon</h3>
+    <p style="margin:0">Since you can step out on your own, the natural slot is <strong>Saturday 3:30–4:30 PM</strong> at either St. Philip or Sacred Heart (it pairs perfectly with a 5:00 PM vigil). St. Philip also offers Saturday 8:00–8:50 AM, and both have Thursday 5–6 PM if you'd rather go before the trip. Give Erin a heads-up that you'll step away for a bit.</p>
+  </div>
+</section>
+
+<!-- PACKING -->
+<section id="packing">
+  <div class="kicker">Don't forget</div>
+  <h2>Packing list</h2>
+  <p class="lead">Built for a hot performing weekend + three nights in a dorm. Print this and check it off.</p>
+  <div class="grid g3">
+    <div class="card">
+      <h3>🎭 The costume</h3>
+      <ul class="box">
+        <li>Full mascot suit + head</li>
+        <li>Gloves/paws, shoes, accessories</li>
+        <li>Navy SMHS tunic</li>
+        <li>Bag/bin to transport &amp; carry it</li>
+        <li>Small repair kit (safety pins, tape)</li>
+        <li>Towel to wipe down the head</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🥵 Performing &amp; cooling</h3>
+      <ul class="box">
+        <li>Performing undergarments (wear to check-in)</li>
+        <li>Clothes worn under the suit</li>
+        <li>Cooling towel + personal fan</li>
+        <li>Ice packs, sweatband/wristbands</li>
+        <li>Refillable water bottle (x2)</li>
+        <li>Deodorant + body wipes</li>
+        <li>Extra socks &amp; shirts</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🏨 Dorm (3 nights)</h3>
+      <ul class="box">
+        <li><strong>Your own linens/bedding</strong> (Millersville requires it — twin XL) *</li>
+        <li>Pillow, towel, shower stuff</li>
+        <li>Toiletries &amp; any medications</li>
+        <li>Shower shoes / flip-flops</li>
+        <li>Phone + charger, power bank</li>
+        <li>Comfortable clothes for 4 days</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎢 Park day</h3>
+      <ul class="box">
+        <li>Swimsuit + towel (water park)</li>
+        <li>Water shoes/sandals</li>
+        <li>Sunscreen, hat, sunglasses</li>
+        <li>Small backpack</li>
+        <li>Plastic bags for wet items</li>
+        <li>Park wristband (keep it on)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📄 Documents</h3>
+      <ul class="box">
+        <li>Parking pass (phone or printed)</li>
+        <li>Parking map</li>
+        <li>ID / insurance card</li>
+        <li>This itinerary (print or bookmarked)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💵 Money</h3>
+      <ul class="box">
+        <li>Card + some cash</li>
+        <li>A-la-carte breakfasts/dinners if desired</li>
+        <li>Post-game dinner Sunday</li>
+        <li>Hersheypark snacks / souvenirs</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted">* Erin can lend a linen set if needed (she brings spares for cross-country flyers) — just ask ahead.</p>
+</section>
+
+<!-- MEALS -->
+<section id="meals">
+  <div class="kicker">What's covered</div>
+  <h2>Meals</h2>
+  <p class="lead">A lot is included. Wyatt is a <strong>resident</strong>; if Dom commutes rather than staying in the dorm, use the commuter column.</p>
+  <div class="card">
+    <table>
+      <tr><th>Meal</th><th>Resident (Wyatt)</th><th>Commuter (parent/advisor)</th></tr>
+      <tr><td>Thu lunch @ Hersheypark</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
+      <tr><td>Thu dinner @ Millersville</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
+      <tr><td>Fri / Sat / Sun breakfast</td><td class="pill-done">Covered</td><td>A-la-carte (pay on campus)</td></tr>
+      <tr><td>Fri / Sat / Sun lunch</td><td class="pill-done">Covered</td><td class="pill-done">Covered</td></tr>
+      <tr><td>Fri &amp; Sat dinner @ Millersville</td><td class="pill-done">Covered</td><td>A-la-carte (pay on campus)</td></tr>
+    </table>
+    <p class="muted" style="margin-bottom:0">Commuting parents/advisors park in the lot south of the SMC. Lunch orders for the Hershey day are already submitted — see <a href="#documents">Documents</a>.</p>
+  </div>
+</section>
+
+<!-- RULES -->
+<section id="rules">
+  <div class="kicker">Good to know</div>
+  <h2>Youth protection &amp; conduct</h2>
+  <div class="callout">
+    <h3>The two-adult rule</h3>
+    <p style="margin:0">Keystone uses the same accountability rule as Scouting: any time a youth contacts an adult, a <strong>second adult is copied</strong>. If Wyatt needs to contact Erin or a trainer, he <strong>copies Dom (parent/guardian)</strong>. Adults contacting a youth copy Erin. That's the entire "youth protection training" — there's no separate online course.</p>
+  </div>
+  <p class="muted">Dom's PA volunteer clearances (State Police / Child Abuse / FBI) are complete and already on file with Keystone, satisfying the adult-clearance requirement.</p>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="kicker">Who to call</div>
+  <h2>Key contacts</h2>
+  <div class="contactgrid">
+    <div class="contact">
+      <div class="role">Camp — everything</div>
+      <div class="name">Erin Blank</div>
+      <div class="muted">Owner, Keystone Mascots LLC</div>
+      <div style="margin-top:6px">
+        <a class="btn" href="tel:+17177990233">Call / text (717) 799-0233</a>
+        <a class="btn ghost" href="mailto:info@keystonemascots.com">Email</a>
+      </div>
+      <p class="muted" style="margin:8px 0 0">Box 553, Brownstown, PA 17508 · keystonemascots.com</p>
+    </div>
+    <div class="contact">
+      <div class="role">Hersheypark day — waivers, parking, meet &amp; greets</div>
+      <div class="name">Brewer Lister</div>
+      <div class="muted">Hersheypark contact</div>
+      <div style="margin-top:6px">
+        <a class="btn ghost" href="mailto:bslister@hersheypa.com">bslister@hersheypa.com</a>
+      </div>
+      <p class="muted" style="margin:8px 0 0">100 Hersheypark Drive, Hershey, PA 17033</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="documents">
+  <div class="kicker">Paperwork</div>
+  <h2>Documents</h2>
+  <p class="lead">The operational stuff you might want on the day is here. Personal/legal documents are intentionally <strong>kept out of this site</strong> (see the privacy note) and live in your OneDrive.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Day-of documents</h3>
+      <table>
+        <tr><th>Doc</th><th>Where / action</th></tr>
+        <tr><td><strong>Hersheypark parking pass</strong></td><td>In Erin's <em>"Hersheypark Day DETAILS"</em> email (Jul 3). <strong>Keep it on your phone / print it.</strong> <a href="https://mail.google.com/mail/u/0/#inbox/19f260b1421dd629" target="_blank" rel="noopener">Open email ↗</a></td></tr>
+        <tr><td><strong>Parking map</strong> <span class="pill-done">✓ bundled</span></td><td>Shows GATESIDE (Lot N) by the Arena. <a href="assets/documents/Parking-Map.pdf" target="_blank" rel="noopener">Open PDF ↗</a> · also shown in <a href="#hershey">the Hershey playbook</a>.</td></tr>
+        <tr><td>Lunch order — Wyatt</td><td><a href="assets/documents/Lunch-Order-Wyatt.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
+        <tr><td>Lunch order — Dom</td><td><a href="assets/documents/Lunch-Order-Dom.pdf" target="_blank" rel="noopener">Open PDF ↗</a> (already submitted)</td></tr>
+      </table>
+      <p class="muted" style="margin-bottom:0">The parking map is bundled. To add the <strong>parking pass</strong> too, drop its PDF into <code>assets/documents/</code> and link it here — but keep the repo <strong>private</strong> if you do (a pass can carry a name/barcode).</p>
+    </div>
+    <div class="card">
+      <h3>Kept private (in OneDrive, not published)</h3>
+      <p class="muted">These contain signatures and personal identifiers, so they're deliberately excluded from this site. They live in <code>Kids\Wyatt\Mascot\</code>.</p>
+      <ul class="box">
+        <li>Signed Hersheypark release &amp; waiver forms (Wyatt + Dom)</li>
+        <li>PA Act 34 / Act 151 / FBI Act 114 clearances</li>
+        <li>Keystone registration packet &amp; invoice</li>
+      </ul>
+      <div class="callout warn" style="margin-bottom:0">
+        <strong>Privacy:</strong> if you publish this repo on GitHub Pages, anything committed becomes public. Keep clearances &amp; signed waivers out of the repo (they already are). Consider a <strong>private repo</strong>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section id="status">
+  <div class="kicker">Peace of mind</div>
+  <h2>Already handled ✅</h2>
+  <div class="grid g2">
+    <div class="card">
+      <ul class="check">
+        <li>Registration packet signed &amp; sent; camp paid (~$1,000)</li>
+        <li>PA clearances (Act 34, Act 151, FBI Act 114) complete &amp; emailed to Keystone</li>
+        <li>Shirt sizes sent (Wyatt L, Dom XL) + Wyatt's mascot photo for the camp shirt</li>
+        <li>Hersheypark waivers (Appearance Release + Mascot Day Release) sent to Brewer for Wyatt &amp; Dom</li>
+        <li>Hersheypark lunch order form submitted</li>
+        <li>Dom's leave approved (Thu Jul 9 &amp; Fri Jul 10)</li>
+        <li>Youth-protection = two-adult rule (no separate course to take)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Still to lock in ⏳</h3>
+      <ul class="box">
+        <li><strong>Decide the Thursday travel plan</strong> — pre-dawn drive vs. Wednesday-night hotel near Hershey.</li>
+        <li><strong>Confirm Dom's lodging</strong> — staying in the Millersville dorm with Wyatt, or commuting?</li>
+        <li><strong>Pack linens/bedding</strong> for the dorm (or ask Erin to lend a set).</li>
+        <li><strong>Save the parking pass</strong> to your phone before Thursday.</li>
+        <li><strong>Plan the Sunday exit</strong> — stay for the full game + dinner, or leave early for the drive home.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="kicker">For the curious</div>
+  <h2>About the camp</h2>
+  <div class="card">
+    <p style="margin-top:0">Keystone Mascots has run mascot training camps since <strong>1990</strong> at Millersville University, billed as the most diverse gathering of experienced mascot trainers anywhere. Over four days Wyatt will work on <strong>character development, acting skills, safety, costume care, crowd interaction, and sportsmanship</strong>, plus PIAA/NCAA regulations and liability basics. He'll build <strong>skits</strong> for games and pep rallies, get <strong>one-on-one counseling</strong>, take home <strong>video footage</strong> of his practices and performance, and a <strong>camp manual</strong> to keep learning after camp ends.</p>
+      <p style="margin-bottom:0">The camp has been featured by USA Today, the Washington Post, ESPN Magazine, ABC, NBC and more. It wraps with a <strong>graduation performance at a Lancaster Stormers game</strong> — a real crowd, a real finale. <a href="https://keystonemascots.com/" target="_blank" rel="noopener">keystonemascots.com ↗</a></p>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap">
+    <strong>Mascot Camp 2026 — Dom &amp; Wyatt</strong> · July 9–12, 2026 · Hersheypark + Millersville University, PA<br>
+    Camp: Erin Blank, Keystone Mascots · <a href="tel:+17177990233">(717) 799-0233</a> · <a href="mailto:info@keystonemascots.com">info@keystonemascots.com</a><br>
+    Hersheypark: Brewer Lister · <a href="mailto:bslister@hersheypa.com">bslister@hersheypa.com</a>
+    <p class="muted" style="color:#c9b49a;margin:10px 0 0">Private family reference. Built from Keystone Mascots &amp; Hersheypark emails, the Task Board, and keystonemascots.com. Verify live details with Erin before travel.</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+  // Countdown to Hersheypark check-in: Thu Jul 9, 2026, 8:00 AM ET (UTC-4)
+  var target = new Date("2026-07-09T08:00:00-04:00").getTime();
+  function tick(){
+    var now = Date.now(), d = target - now;
+    var el = function(id){return document.getElementById(id)};
+    if(d <= 0){
+      document.getElementById("countdown").innerHTML =
+        '<div class="cd" style="flex:1;min-width:auto"><b style="font-size:1.05rem">🎉 It\'s camp time — have a blast!</b></div>';
+      return;
+    }
+    var day = Math.floor(d/86400000),
+        hr  = Math.floor(d%86400000/3600000),
+        mi  = Math.floor(d%3600000/60000),
+        se  = Math.floor(d%60000/1000);
+    el("cd-d").textContent = day;
+    el("cd-h").textContent = String(hr).padStart(2,"0");
+    el("cd-m").textContent = String(mi).padStart(2,"0");
+    el("cd-s").textContent = String(se).padStart(2,"0");
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Back to top
+  var btn = document.getElementById("toTop");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 500){ btn.classList.add("show"); } else { btn.classList.remove("show"); }
+  });
+  btn.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+</script>
+</body>
+</html>

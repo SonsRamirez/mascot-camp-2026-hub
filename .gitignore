@@ -1,0 +1,18 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Safety net: never commit personal/legal docs if they get dropped in here.
+# (The site intentionally ships only the lunch-order PDFs in assets/documents/.)
+*clearance*.pdf
+*Clearance*.pdf
+*[Ww]aiver*.pdf
+*Application*.pdf
+*Release*.pdf
+*Invoice*.pdf
+*PATCH*.pdf
+*FBI*.pdf
