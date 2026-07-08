@@ -244,14 +244,14 @@
         <span class="chip">🎢 ~125 mascots at Hershey</span>
       </div>
       <div class="herocard" style="margin-top:14px">
-        <div class="kicker" style="color:var(--gold)">Countdown to Hersheypark check-in</div>
+        <div class="kicker" id="cd-label" style="color:var(--gold)">Countdown to leaving for the hotel</div>
         <div class="countdown" id="countdown" aria-live="polite">
           <div class="cd"><b id="cd-d">–</b><span>days</span></div>
           <div class="cd"><b id="cd-h">–</b><span>hrs</span></div>
           <div class="cd"><b id="cd-m">–</b><span>min</span></div>
           <div class="cd"><b id="cd-s">–</b><span>sec</span></div>
         </div>
-        <div class="muted" style="color:#e9d9c3;margin-top:8px">Thursday, July 9 · 8:00 AM · Hersheypark GATESIDE lot</div>
+        <div class="muted" id="cd-sub" style="color:#e9d9c3;margin-top:8px">Wednesday, July 8 · by 7:00 PM · depart for the Hershey hotel</div>
       </div>
     </div>
     <div>
@@ -765,17 +765,31 @@
 <button id="toTop" aria-label="Back to top">↑</button>
 
 <script>
-  // Countdown to Hersheypark check-in: Thu Jul 9, 2026, 8:00 AM ET (UTC-4)
-  var target = new Date("2026-07-09T08:00:00-04:00").getTime();
+  // Milestone countdown — counts to the next upcoming moment, then rolls forward.
+  var milestones = [
+    { t:new Date("2026-07-08T19:00:00-04:00").getTime(),
+      label:"Countdown to leaving for the hotel",
+      sub:"Wednesday, July 8 · by 7:00 PM · depart for the Hershey hotel" },
+    { t:new Date("2026-07-09T08:00:00-04:00").getTime(),
+      label:"Countdown to Hersheypark check-in",
+      sub:"Thursday, July 9 · 8:00 AM · Hersheypark GATESIDE lot" }
+  ];
   function tick(){
-    var now = Date.now(), d = target - now;
-    var el = function(id){return document.getElementById(id)};
-    if(d <= 0){
+    var now = Date.now(),
+        el = function(id){return document.getElementById(id)},
+        m = null;
+    for(var i=0;i<milestones.length;i++){ if(milestones[i].t > now){ m = milestones[i]; break; } }
+    if(!m){
+      el("cd-label").textContent = "It's camp time!";
+      el("cd-sub").textContent = "Have a blast, Wyatt & Dom 🎭";
       document.getElementById("countdown").innerHTML =
         '<div class="cd" style="flex:1;min-width:auto"><b style="font-size:1.05rem">🎉 It\'s camp time — have a blast!</b></div>';
       return;
     }
-    var day = Math.floor(d/86400000),
+    el("cd-label").textContent = m.label;
+    el("cd-sub").textContent = m.sub;
+    var d = m.t - now,
+        day = Math.floor(d/86400000),
         hr  = Math.floor(d%86400000/3600000),
         mi  = Math.floor(d%3600000/60000),
         se  = Math.floor(d%60000/1000);
